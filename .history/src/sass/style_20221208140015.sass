@@ -1,0 +1,127 @@
+@use 'variables'
+@use 'mixins'
+  
+body
+  margin: 0
+  padding: 0
+  background-color: variables.$black
+  color: #ffffff
+  font-family: 'Inter', sans-serif
+  -webkit-font-smoothing: antialiased
+  display: flex
+  justify-content: center
+
+.container
+  width: 423px
+  height: 820px
+  background-color: variables.$container-dark-theme
+  border-radius: 8px
+  padding: 24px
+  margin-top: 64px
+
+header
+  @include mixins.flex-content
+  justify-content: space-evenly
+  gap: 32px
+  margin-bottom: 24px
+
+  .logo-ph-size
+    font-size: 2.5rem
+    cursor: pointer
+    &:hover
+      color: variables.$lightbulb-color
+      transition: 300ms
+  .title
+    @include mixins.title-text
+
+.subtitle
+  @include mixins.subtitle-text
+  @include mixins.flex-content
+  margin-bottom: 32px
+
+.input
+  margin-bottom: 24px
+  &-container
+    display: flex
+    align-items: center
+    margin-top: 8px
+    &-icon
+      position: absolute
+      margin-left: 8px 
+      color: variables.$black
+      font-size: 32px
+    &-box
+      height: 100%
+      width: 100%
+      background-color: variables.$bg-input
+      border-radius: 8px
+      padding: 13px 52px
+      border: 1px solid variables.$black
+      @include mixins.roboto-regular
+      &::placeholder
+        color: variables.$placholder-text-color
+        @include mixins.roboto-regular
+  &-button
+    margin-left: 8px
+    font-size: 36px
+    color: variables.$white
+    border: none
+    background: transparent
+    cursor: pointer
+    @include mixins.flex-content
+    i:hover
+      color: #AA03C6
+      transition: 300ms
+
+.tasks
+  margin-top: 8px
+  width: 100%
+  height: 528px
+  overflow: auto
+  white-space: nowrap
+  scrollbar-width: thin
+  scrollbar-color: #000 transparent
+  &::-webkit-scrollbar
+    width: 4px
+  &::-webkit-scrollbar-track
+    background: transparent
+  &::-webkit-scrollbar-thumb
+    background-color: #000
+  &-container
+    display: flex
+    align-items: center
+    justify-content: space-between
+    gap: 12px
+    padding: 8px
+    background-color: variables.$bg-input
+    border-radius: 8px
+    margin-bottom: 12px
+  &-input
+    display: flex
+    align-items: center
+    gap: 12px
+  &-text-unchecked
+    include mixins.roboto-regular
+    color: variables.$text-color-todo
+    cursor: pointer
+  &-text-checked
+    include mixins.roboto-regular
+    color: variables.$checked-color
+    opacity: 70%
+    text-decoration: line-through
+  &-timer
+    border: none
+    background: transparent
+    font-size: 32px
+    display: flex
+    align-items: center
+    .timer-checked
+      color: variables.$checked-color
+
+.empty
+  display: flex
+  align-items: center
+  justify-content: center
+  margin-top: 12px
+  &-text
+    color: variables.$bg-input

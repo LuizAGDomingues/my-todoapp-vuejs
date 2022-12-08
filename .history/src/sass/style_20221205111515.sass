@@ -1,0 +1,13 @@
+@use 'variables'
+@use 'mixins'
+  
+*
+  margin: 0
+  padding: 0
+  background-color: variables.$black
+  color: #ffffff
+  font-family: 'Inter', sans-serif
+  -webkit-font-smoothing: antialiased
+
+h1
+  @include mixins.title-text

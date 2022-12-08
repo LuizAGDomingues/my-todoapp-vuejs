@@ -1,0 +1,18 @@
+@use 'variables'
+@use 'mixins'
+  
+body
+  margin: 0
+  padding: 0
+  background-color: variables.$black
+  color: #ffffff
+  font-family: 'Inter', sans-serif
+  -webkit-font-smoothing: antialiased
+
+.container
+  width: 423px
+  height: 820px
+  background-color: variables.$container-dark-theme
+
+h1
+  @include mixins.title-text
