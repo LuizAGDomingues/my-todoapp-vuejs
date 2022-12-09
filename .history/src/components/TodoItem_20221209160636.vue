@@ -6,8 +6,8 @@
     </div>
     <div class="tasks-timer">
       <Cronometro v-if="setCronometer" :tempoEmSegundos="timeInSeconds" />
-      <button class="tasks-timer-icon" :disabled="isCompleted" @click="clickTimer">
-        <i class="ph-timer" :class="{'timer-checked': isCompleted}" ></i>
+      <button class="tasks-timer-icon" :disabled="isCompleted" >
+        <i class="ph-timer" :class="{'timer-checked': isCompleted}" @click="clickTimer"></i>
       </button>
     </div>
   </div>
@@ -57,8 +57,6 @@ export default {
   methods: {
     changeState(){
       this.isCompleted = !this.isCompleted
-      this.cronometerState = false
-      clearInterval(this.cronometer)
       this.updateTodo()
     },
     clickTimer(){

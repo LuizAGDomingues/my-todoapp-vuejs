@@ -1,0 +1,1 @@
+this.$cookies.set("todos", JSON.stringify(cookiesArray), "1d")

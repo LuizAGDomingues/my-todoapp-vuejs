@@ -58,7 +58,7 @@ export default {
     changeState(){
       this.isCompleted = !this.isCompleted
       this.cronometerState = false
-      clearInterval(this.cronometer)
+        clearInterval(this.cronometer)
       this.updateTodo()
     },
     clickTimer(){

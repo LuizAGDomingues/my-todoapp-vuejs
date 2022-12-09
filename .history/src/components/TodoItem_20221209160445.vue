@@ -5,9 +5,9 @@
       <span @click="openEditModal" :class="{'tasks-text-unchecked': isCompleted === false, 'tasks-text-checked': isCompleted === true}">{{todoTitle}}</span>
     </div>
     <div class="tasks-timer">
-      <Cronometro v-if="setCronometer" :tempoEmSegundos="timeInSeconds" />
-      <button class="tasks-timer-icon" :disabled="isCompleted" @click="clickTimer">
-        <i class="ph-timer" :class="{'timer-checked': isCompleted}" ></i>
+      <Cronometro v-if="setCronometer" />
+      <button class="tasks-timer-icon" :disabled="isCompleted" >
+        <i class="ph-timer" :class="{'timer-checked': isCompleted}" @click="clickTimer"></i>
       </button>
     </div>
   </div>
@@ -57,11 +57,10 @@ export default {
   methods: {
     changeState(){
       this.isCompleted = !this.isCompleted
-      this.cronometerState = false
-      clearInterval(this.cronometer)
       this.updateTodo()
     },
     clickTimer(){
+      console.log("aqui")
       if(this.cronometerState === false){
         this.setCronometer = true
         this.cronometerState = true
@@ -69,7 +68,7 @@ export default {
           this.timeInSeconds += 1
         }, 1000)
       } else {
-        this.cronometerState = false
+        this.cronometerState = true
         clearInterval(this.cronometer)
       }
     },

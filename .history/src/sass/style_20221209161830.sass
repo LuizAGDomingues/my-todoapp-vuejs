@@ -12,18 +12,18 @@ body
   justify-content: center
 
 .container
-  width: 423px
-  height: 820px
+  width: 26.44rem
+  height: 51.25rem
   background-color: variables.$container-dark-theme
-  border-radius: 8px
-  padding: 24px
-  margin-top: 64px
+  border-radius: 0.5rem
+  padding: 0.67rem
+  margin-top: 1rem
 
 header
   @include mixins.flex-content
   justify-content: space-evenly
-  gap: 32px
-  margin-bottom: 24px
+  gap: 2rem
+  margin-bottom: 1.5rem
 
   .logo-ph-size
     font-size: 2.5rem
@@ -37,33 +37,33 @@ header
 .subtitle
   @include mixins.subtitle-text
   @include mixins.flex-content
-  margin-bottom: 32px
+  margin-bottom: 2rem
 
 .input
-  margin-bottom: 24px
+  margin-bottom: 1.5rem
   &-container
     display: flex
     align-items: center
-    margin-top: 8px
+    margin-top: 0.5rem
     &-icon
       position: absolute
-      margin-left: 8px 
+      margin-left: 0.5rem 
       color: variables.$black
-      font-size: 32px
+      font-size: 2rem
     &-box
       height: 100%
       width: 100%
       background-color: variables.$bg-input
-      border-radius: 8px
-      padding: 13px 52px
+      border-radius: 0.5rem
+      padding: 0.81rem 3.25rem
       border: 1px solid variables.$black
       @include mixins.roboto-regular
       &::placeholder
         color: variables.$placholder-text-color
         @include mixins.roboto-regular
   &-button
-    margin-left: 8px
-    font-size: 36px
+    margin-left: 0.5rem
+    font-size: 2.25rem
     color: variables.$white
     border: none
     background: transparent
@@ -74,8 +74,8 @@ header
       transition: 300ms
 
 .tasks
-  margin-top: 8px
-  height: 528px
+  margin-top: 0.5rem
+  height: 33rem
   width: 100%
   overflow: auto
   white-space: nowrap
@@ -92,11 +92,11 @@ header
     align-items: center
     justify-content: space-between
     gap: 12px
-    padding: 8px
+    padding: 0.5rem
     background-color: variables.$bg-input
-    border-radius: 8px
+    border-radius: 0.5rem
     margin-bottom: 12px
-    margin-right: 8px
+    margin-right: 0.5rem
   &-input
     display: flex
     align-items: center
@@ -117,7 +117,7 @@ header
     &-icon
       border: none
       background: transparent
-      font-size: 32px
+      font-size: 2rem
       cursor: pointer
       display: flex
       align-items: center
