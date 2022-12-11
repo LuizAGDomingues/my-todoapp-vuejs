@@ -1,9 +1,8 @@
 <template>
   <div class="tasks-container" >
     <div class="tasks-input">
-      <button class="tasks-input-button" @click="changeState">
-        <radiobutton :checked="isCompleted"/>
-      </button>
+      <button></button>
+      <radiobutton :checked="isCompleted" @click="changeState" />
       <span @click="openEditModal" :class="{'tasks-text-unchecked': isCompleted === false, 'tasks-text-checked': isCompleted === true}">{{todoTitle}}</span>
     </div>
     <div class="tasks-timer">

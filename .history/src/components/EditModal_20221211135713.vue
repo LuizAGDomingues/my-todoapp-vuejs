@@ -43,12 +43,12 @@ export default {
 <style scoped>
 
 .modal-container {
-  position: absolute;
+  position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   height: 280px;
-  max-width: 494px;
+  width: 494px;
   background-color: #1e1e1e;
   border-radius: 8px;
   border: 2px solid #d10132;

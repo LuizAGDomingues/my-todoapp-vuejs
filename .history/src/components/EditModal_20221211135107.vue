@@ -48,7 +48,7 @@ export default {
   top: 50%;
   transform: translate(-50%, -50%);
   height: 280px;
-  max-width: 494px;
+  width: 494px;
   background-color: #1e1e1e;
   border-radius: 8px;
   border: 2px solid #d10132;
@@ -101,6 +101,13 @@ form input {
   border-radius: 8px;
   padding: 13px 52px;
   border: 1px solid #000000;
+  font-family: 'Roboto';
+  font-size: 1rem;
+  overflow: hidden;
+}
+
+form input::placeholder {
+  color: #4f4f4f;
   font-family: 'Roboto';
   font-size: 1rem;
 }

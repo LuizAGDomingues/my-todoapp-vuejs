@@ -27,6 +27,7 @@ header
 
   .logo-ph-size
     font-size: 2.5rem
+    cursor: pointer
     &:hover
       color: variables.$lightbulb-color
       transition: 300ms
@@ -100,25 +101,22 @@ header
     display: flex
     align-items: center
     gap: 12px
-    overflow: hidden
-    &-button
-      border: none
-      background: transparent
-      display: flex
-      align-items: center
-      font-size: 32px
-      margin: 0
-      padding: 0
+    width: 100%
   &-text-unchecked
     include mixins.roboto-regular
     color: variables.$text-color-todo
     cursor: pointer
-    overflow: hidden
+    overflow-wrap: break-word
+    word-wrap: break-word
+    word-break: break-word
   &-text-checked
     include mixins.roboto-regular
     color: variables.$checked-color
+    opacity: 70%
     text-decoration: line-through
-    overflow: hidden
+    overflow-wrap: break-word
+    word-wrap: break-word
+    word-break: break-word
   &-timer
     display: flex
     align-items: center

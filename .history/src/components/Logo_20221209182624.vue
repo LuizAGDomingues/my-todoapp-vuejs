@@ -11,3 +11,9 @@ export default{
   name: "Logo"
 }
 </script>
+
+<style scoped>
+svg {
+  
+}
+</style>

@@ -53,6 +53,7 @@ export default {
   border-radius: 8px;
   border: 2px solid #d10132;
   padding: 26px;
+  overflow: hidden;
 }
 .modal-close {
   border: none;

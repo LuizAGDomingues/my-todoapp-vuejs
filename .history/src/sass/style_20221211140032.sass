@@ -96,29 +96,20 @@ header
     border-radius: 8px
     margin-bottom: 12px
     margin-right: 8px
+    
   &-input
     display: flex
     align-items: center
     gap: 12px
     overflow: hidden
-    &-button
-      border: none
-      background: transparent
-      display: flex
-      align-items: center
-      font-size: 32px
-      margin: 0
-      padding: 0
   &-text-unchecked
     include mixins.roboto-regular
     color: variables.$text-color-todo
     cursor: pointer
-    overflow: hidden
   &-text-checked
     include mixins.roboto-regular
     color: variables.$checked-color
     text-decoration: line-through
-    overflow: hidden
   &-timer
     display: flex
     align-items: center

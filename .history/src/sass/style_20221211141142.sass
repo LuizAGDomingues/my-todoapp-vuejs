@@ -101,19 +101,12 @@ header
     align-items: center
     gap: 12px
     overflow: hidden
-    &-button
-      border: none
-      background: transparent
-      display: flex
-      align-items: center
-      font-size: 32px
-      margin: 0
-      padding: 0
   &-text-unchecked
     include mixins.roboto-regular
     color: variables.$text-color-todo
     cursor: pointer
     overflow: hidden
+    margin-left: 1px
   &-text-checked
     include mixins.roboto-regular
     color: variables.$checked-color
