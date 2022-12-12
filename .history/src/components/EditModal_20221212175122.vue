@@ -116,7 +116,7 @@ form .icon-check {
 form .icon-trash {
   font-size: 32px;
   color: #FF0000;
-  margin-left: 10px;
+  margin-left: 8px;
   cursor: pointer;
 }
 

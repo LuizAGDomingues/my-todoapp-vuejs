@@ -99,7 +99,7 @@ form input {
   width: 100%;
   background-color: #d0d0d0;
   border-radius: 8px;
-  padding: 13px 52px;
+  padding: 13px 50px;
   border: 1px solid #000000;
   font-family: 'Roboto';
   font-size: 1rem;
@@ -108,15 +108,14 @@ form input {
 
 form .icon-check {
   font-size: 32px;
-  color: #00b618;
-  margin-left: 8px;
+  color: #00ff22;
   cursor: pointer;
 }
 
 form .icon-trash {
   font-size: 32px;
   color: #FF0000;
-  margin-left: 10px;
+  margin-left: 16px;
   cursor: pointer;
 }
 

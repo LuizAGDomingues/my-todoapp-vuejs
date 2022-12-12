@@ -6,7 +6,7 @@
     <h2 class="modal-text">Edite sua tarefa ou exclua</h2>
     <form action="submit" @submit.prevent="updateTodo">
       <i class="ph-note-pencil icon-pencil"></i>
-      <input type="text" v-model="newTodoTitle" />
+      <input type="text" v-model="newTodoTitle" wra/>
       <i class="ph-check icon-check" @click="updateTodo"></i>
       <i class="ph-trash icon-trash" @click="deleteTodo"></i>
     </form>
@@ -108,15 +108,16 @@ form input {
 
 form .icon-check {
   font-size: 32px;
-  color: #00b618;
-  margin-left: 8px;
+  position: absolute;
+  color: #000000;
+  margin-left: 245px;
   cursor: pointer;
 }
 
 form .icon-trash {
   font-size: 32px;
   color: #FF0000;
-  margin-left: 10px;
+  margin-left: 16px;
   cursor: pointer;
 }
 
