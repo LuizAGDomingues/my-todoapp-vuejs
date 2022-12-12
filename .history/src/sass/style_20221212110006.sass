@@ -77,6 +77,7 @@ header
   height: 528px
   width: 100%
   overflow: auto
+  white-space: nowrap
   scrollbar-width: thin
   scrollbar-color: #000 transparent
   &::-webkit-scrollbar
@@ -99,7 +100,8 @@ header
     display: flex
     align-items: center
     gap: 12px
-    overflow: hidden
+    line-break: auto
+    max-width: 340px
     &-button
       border: none
       background: transparent
@@ -112,13 +114,15 @@ header
     include mixins.roboto-regular
     color: variables.$text-color-todo
     cursor: pointer
-    overflow: hidden
+    max-width: 340px
+    overflow-wrap: break-word;  
+    word-wrap: break-word; 
+    word-break: break-word;
   &-text-checked
     include mixins.roboto-regular
     color: variables.$checked-color
     text-decoration: line-through
     overflow: hidden
-    transition: 300ms
   &-timer
     display: flex
     align-items: center

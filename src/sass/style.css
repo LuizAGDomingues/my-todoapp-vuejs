@@ -109,7 +109,6 @@ header .title {
   height: 528px;
   width: 100%;
   overflow: auto;
-  white-space: nowrap;
   scrollbar-width: thin;
   scrollbar-color: #000 transparent;
 }
@@ -157,6 +156,7 @@ header .title {
   color: #03a500;
   text-decoration: line-through;
   overflow: hidden;
+  transition: 300ms;
 }
 .tasks-timer {
   display: flex;

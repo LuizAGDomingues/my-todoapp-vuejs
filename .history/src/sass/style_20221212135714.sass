@@ -77,6 +77,8 @@ header
   height: 528px
   width: 100%
   overflow: auto
+  white-space: nowrap
+  word-break: break-word
   scrollbar-width: thin
   scrollbar-color: #000 transparent
   &::-webkit-scrollbar
@@ -118,7 +120,6 @@ header
     color: variables.$checked-color
     text-decoration: line-through
     overflow: hidden
-    transition: 300ms
   &-timer
     display: flex
     align-items: center

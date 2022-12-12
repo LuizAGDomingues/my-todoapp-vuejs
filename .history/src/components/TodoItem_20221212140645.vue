@@ -1,0 +1,108 @@
+<template>
+  <div class="task-container" >
+    <div class="task-input">
+      <button class="task-input-button" @click="changeState">
+        <radiobutton :checked="isCompleted"/>
+      </button>
+      <span @click="openEditModal" :class="{'tasks-text-unchecked': isCompleted === false, 'tasks-text-checked': isCompleted === true}">{{todoTitle}}</span>
+    </div>
+    <div class="tasks-timer">
+      <Cronometro v-if="setCronometer" :tempoEmSegundos="timeInSeconds" />
+      <button class="tasks-timer-icon" :disabled="isCompleted" @click="clickTimer">
+        <i class="ph-timer" :class="{'timer-checked': isCompleted}" ></i>
+      </button>
+    </div>
+  </div>
+
+  <Modal 
+    v-if="openModal" 
+    :todo="todo" 
+    @closeModal="closeModal" 
+    @updateTodo="(newTodoTitle) => {
+      todoTitle = newTodoTitle;
+      updateTodo();
+    }" 
+    @deleteTodo="deleteTodo" 
+  />
+
+</template>
+
+<script lang="ts">
+import Radiobutton from './Radiobutton.vue'
+import Modal from './EditModal.vue'
+import Cronometro from './Cronometro.vue'
+
+export default {
+  name: "TodoItem",
+  components: {
+    Radiobutton,
+    Modal,
+    Cronometro
+  },
+  props: {
+    todo: {
+      type: Object,
+      default:() => ({}),
+    }
+  },
+  data(){
+    return{
+      todoTitle: this.todo.title,
+      isCompleted: this.todo.isCompleted,
+      openModal: false,
+      timeInSeconds: 0,
+      cronometer: 0,
+      cronometerState: false,
+      setCronometer: false
+    }
+  },
+  methods: {
+    changeState(){
+      this.isCompleted = !this.isCompleted
+      this.cronometerState = false
+      clearInterval(this.cronometer)
+      this.updateTodo()
+    },
+    clickTimer(){
+      if(this.cronometerState === false){
+        this.setCronometer = true
+        this.cronometerState = true
+        this.cronometer = setInterval(() => {
+          this.timeInSeconds += 1
+        }, 1000)
+      } else {
+        this.cronometerState = false
+        clearInterval(this.cronometer)
+      }
+    },
+    updateTodo(){
+      const payload = {
+        id: this.todo.id,
+        title: this.todoTitle,
+        isCompleted: this.isCompleted,
+      }
+      this.$store.commit('updateTodo', payload)
+      const cookiesArray = this.$store.state.todos
+      this.$cookies.set("todos", JSON.stringify(cookiesArray), "1d")
+    },
+    deleteTodo(){
+      this.$store.commit('deleteTodo', this.todo.id)
+      if(this.$store.state.todos.length === 0 || this.$store.state.todos.length === null) {
+        this.$cookies.set("todos", '')
+        return
+      }
+      const cookiesArray = this.$store.state.todos
+      this.$cookies.set("todos", JSON.stringify(cookiesArray), "1d")
+    },
+    openEditModal(){
+      if(this.isCompleted === true){
+        return
+      }
+      this.openModal = true
+    },
+    closeModal(){
+      this.openModal = false
+    },
+  },
+}
+</script>
